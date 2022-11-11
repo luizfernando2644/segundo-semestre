@@ -72,6 +72,11 @@ class Veiculo():
     def set_km(self, nova_km):
         self.km = nova_km
 
+    def atualiza_valor(self, vlr_aumento):
+        if vlr_aumento > 0:
+            self.valor += vlr_aumento
+        else:
+            print("Erro")
     
     
     
@@ -90,7 +95,7 @@ class Carro(Veiculo):
     def __str__(self):
         i = f"Modelo: {self.modelo}\nValor: {self.valor:.2f}\nQuilometragem: {self.km}\nQuantidade de portas: {self.qtd_portas}"
         return i
-    
+
 
 
 class Moto(Veiculo):
@@ -106,25 +111,28 @@ class Moto(Veiculo):
     def __str__(self):
         i = f"Modelo: {self.modelo}\nValor: {self.valor:.2f}\nQuilometragem: {self.km}\nCilindradas: {self.cilindradas}"
         return i
+    
 
 if __name__ == "__main__":
-    veiculo1 = Carro(20.000, 'Fiorino', 500, 4)
+    veiculo1 = Carro(20000.00, 'Fiorino', 500, 4)
     print("------ Veículo 1 ------")
     print(veiculo1)
+    (veiculo1.atualiza_valor(float(input("Aumento: "))))
+    print(f"Valor atualizado: {veiculo1.get_valor()} reais")
     print("-----------------------")
-    veiculo2 = Carro(50.000, 'HB20', 0)
+    veiculo2 = Carro(50000.00, 'HB20', 0)
     print("------ Veículo 2 ------")
     print(veiculo2)
     print("-----------------------")
-    veiculo3 = Carro(100.000, 'Mercedes')
+    veiculo3 = Carro(100000.00, 'Mercedes')
     print("------ Veículo 3 ------")
     print(veiculo3)
     print("-----------------------")
-    veiculo4 = Moto(15.000, 'Pop100', 200, 300)
+    veiculo4 = Moto(15000.00, 'Pop100', 200, 300)
     print("------ Veículo 4 ------")
     print(veiculo4)
     print("-----------------------")
-    veiculo5 = Moto(20.000, 'Suzuki', 150)
+    veiculo5 = Moto(20000.00, 'Suzuki', 150)
     print("------ Veículo 5 ------")
     print(veiculo5)
     print("-----------------------")
